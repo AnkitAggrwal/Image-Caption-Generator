@@ -2,9 +2,25 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image
+import os
+import gdown
 
 from Utilis.feature_extractor import extract_features
 from Utilis.caption_generator import beam_search_caption
+
+def download_model_from_drive(model_url, output_path):
+    """
+    Download a file from Google Drive using a shareable link.
+
+    Args:
+        model_url (str): The shareable Google Drive URL (must be public).
+        output_path (str): The local path where the file should be saved.
+    """
+    if not os.path.exists(output_path):
+        print(f"Downloading {output_path} from Google Drive...")
+        gdown.download(model_url, output_path, quiet=False, fuzzy=True)
+    else:
+        print(f"{output_path} already exists.")
 
 download_model_from_drive(
     "https://drive.google.com/file/d/107VFKKTU749j27xFuEDsBFJDZ1AJRZF8/view?usp=drive_link",
