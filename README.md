@@ -83,3 +83,9 @@ Generate human-like descriptions
 Lightweight and fast
 
 Runs entirely on CPU (no GPU required)
+
+📥 Download model files here:
+
+- [image_captioning_model.h5]- https://drive.google.com/file/d/1LttiTOGKybdlg6GIxGTuVITy90027e-m/view?usp=drive_link
+- [image_captioning_model.keras]- https://drive.google.com/file/d/107VFKKTU749j27xFuEDsBFJDZ1AJRZF8/view?usp=drive_link
+📂 Place them inside the `Deployment/models/` folder manually after cloning.
