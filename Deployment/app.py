@@ -6,10 +6,13 @@ from PIL import Image
 from Utilis.feature_extractor import extract_features
 from Utilis.caption_generator import beam_search_caption
 
-# Load model and mappings
-model = tf.keras.models.load_model(
-    r"C:\Users\Ankit Aggarwal\Desktop\Final_Image_Captioning\Deployment\image_captioning_model_tf.keras"
+download_model_from_drive(
+    "https://drive.google.com/file/d/107VFKKTU749j27xFuEDsBFJDZ1AJRZF8/view?usp=drive_link",
+    "models/image_captioning_model_tf.keras"
 )
+
+# Load model and mappings
+model = tf.keras.models.load_model("models/image_captioning_model_tf.keras")
 
 word_to_index = np.load('Deployment/word_to_index.npy', allow_pickle=True).item()
 index_to_word = np.load('Deployment/index_to_word.npy', allow_pickle=True).item()
